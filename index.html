@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PADHI PATHOLOGY CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <button id="print-button">Print</button>
+        <input type="range" id="slider" min="0" max="100" value="0">
+    </div>
+    <div class="container">
+        <div id="a4-container">
+            <div id="content">
+                <div class="data">
+                    <div class="input-text">
+                        <label for="name">Name: </label>
+                        <input type="text"name="name">
+                        <br>
+                    </div>
+                    <div class="input-text">
+                        <label for="age">Age: </label>
+                        <input type="number"name="age">
+                    </div>
+                    <div class="input-text">
+                        <label for="sex">Sex: </label>
+                        <input type="text"name="sex">
+                    </div>
+                    <br>
+                </div>
+
+                <div class="report">
+                    <br>
+                    <h3>LIVER FUNCTION TEST REPORT</h3>
+                    <br>
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>TEST NAME</th>
+                                <th>VALUE</th>
+                                <th>UNITS</th>
+                                <th>Ref.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bilirubin-Total</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>mg/dL</td>
+                                <td>0.3-1.2</td>
+                            </tr>
+                            <tr>
+                                <td>Bilirubin-Direct</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>mg/dL</td>
+                                <td>0-0.3</td>
+                            </tr>
+                            <tr>
+                                <td>Bilirubin (INDIRECT)</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>mg/dL</td>
+                                <td>0-0.9</td>
+                            </tr>
+                            <tr>
+                                <td>SGOT</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>U/L</td>
+                                <td>0-35</td>
+                            </tr>
+                            <tr>
+                                <td>SGPT</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>U/L</td>
+                                <td>0-45</td>
+                            </tr>
+                            <tr>
+                                <td>ALKALINE PHOSPHATE</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>mg/dL</td>
+                                <td>45-129</td>
+                            </tr>
+                            <tr>
+                                <td>S PROTEIN</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>mg/dL</td>
+                                <td>5.7-8.2</td>
+                            </tr>
+                            <tr>
+                                <td>ALBUMIN</td>
+                                <td>
+                                    <input type="number"name="value">
+                                </td>
+                                <td>mg/dL</td>
+                                <td>3.2-4.8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
