@@ -122,13 +122,14 @@ function displayItems(itemsToDisplay) {
 
         if(item.ref=="HEAD"){
             nameTd.id="head";
-            if(nameTd.id!="head"){
+        }
+
+        if(nameTd.id==head){
             nameTd.style.width='100%';
             nameTd.style.textAlign='center';
             nameTd.style.fontSize='18px';
             nameTd.style.fontWeight='bold';
             nameTd.style.textDecoration='underline';
-            }
             tr.appendChild(selectTd);
             tr.appendChild(nameTd);
         }else{
