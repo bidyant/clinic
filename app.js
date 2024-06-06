@@ -1,0 +1,173 @@
+const slider = document.getElementById('slider');
+const a4Container = document.getElementById('content');
+
+slider.addEventListener('input', () => {
+    const value = slider.value;
+    a4Container.style.transform = `translateY(${value}%)`;
+});
+
+document.getElementById('print-button').addEventListener('click', function() {
+    window.print();
+});
+
+
+
+
+// scripts.js
+
+// Get the current date
+const currentDate = new Date();
+
+// Format the date as needed
+const formattedDate = currentDate.toDateString(); // e.g., "Wed Jun 06 2024"
+
+// Get the <p> tag by its ID
+const dateParagraph = document.getElementById('dateParagraph');
+
+// Set the text content of the <p> tag to the formatted date
+dateParagraph.textContent = "Date: "+formattedDate;
+
+
+
+
+
+
+let items = [
+    { name: 'HEMOGLOBIN', value: '', units: 'gm%', ref: '-' },
+];
+
+let options = [
+    { name: 'WIDAL TEST', units:' ', ref: 'HEAD'},
+    { name: 'RENAL FUNCTION TEST', units:' ', ref: 'HEAD'},
+    { name: 'ELECTROLITE PROFILE', units:' ', ref: 'HEAD'},
+    { name: 'E.S.R', units: 'mm/1hr', ref: ' ' },
+    { name: 'MALARIA (Ag)', units: ' ', ref: ' ' },
+    { name: 'HEMOGLOBIN', units: 'gm%', ref: ' ' },
+    { name: 'V.D.R.L', units: ' ', ref: ' ' },
+    { name: 'TOXO', units: ' ', ref: ' '},
+    { name: 'A.S.O', units: ' ', ref: ' ' },
+    { name: 'R.A (FACTOR)', units: ' ', ref: ' '},
+    { name: 'H.I.V', units: ' ', ref: ' ' },
+    { name: 'S TYPHI O', units: ' ', ref: ' ' },
+    { name: 'S TYPHI H', units: ' ', ref: ' ' },
+    { name: 'S ParaTyphiA H', units: ' ', ref: ' ' },
+    { name: 'S ParaTyphiB H', units: ' ', ref: ' ' },
+    { name: 'TYPHOID (kit)', units: ' ', ref: ' ' },
+    { name: 'B.T', units:'min sec.', ref:' '},
+    { name: 'C.T', units:'min sec.', ref: ' '},
+    { name: 'F.B.S', units: 'mg/dL', ref: '(70-120)mg/dL' },
+    { name: 'R.B.S', units: 'mg/dL', ref: '(80-150)mg/dL' },
+    { name: 'P.P.B.S', units: 'mg/dL', ref: '(80-150)mg/dL' },
+    { name: 'P.G.B.S', units: 'mg/dL', ref: '(80-150)mg/dL' },
+    { name: 'BLOOD UREA', units: 'mg/dL', ref: '(15-40)mg/dL' },
+    { name: 'S CREATININE', units: 'mg/dLkg', ref: '(0.7-12)mg/dL' },
+    { name: 'URIC ACID', units: 'mg/dL', ref: '(1.5-6)mg/dL' },
+    { name: 'S. SODIUM (Na+)', units: 'mm/dL', ref: '(135-155)mm/dL' },
+    { name: 'S POTASIUM (K+)', units: 'mm/dL', ref: '(3.5-5.5)mm/dL' },
+    { name: 'I CALCIUM', units: 'mg/dL', ref: '(3.0-5.6)mg/dL' },
+    { name: 'CHOLORIDE', units: 'mm/dL', ref: '(94-110)mm/dL' },
+    { name: 'PREGNANCY TEST (Kit)', units: ' ', ref: ' ' }
+];
+
+function populateSelectElement() {
+    const optionSelect = document.getElementById('optionSelect');
+
+    options.forEach((option, index) => {
+        const optionElement = document.createElement('option');
+        optionElement.value = index;
+        optionElement.textContent = option.name;
+        optionSelect.appendChild(optionElement);
+    });
+}
+
+function addItem() {
+    const optionSelect = document.getElementById('optionSelect');
+    const selectedIndex = optionSelect.value;
+    const selectedOption = options[selectedIndex];
+    if (selectedOption) {
+        items.push({ name: selectedOption.name, value: '', units: selectedOption.units, ref: selectedOption.ref });
+        displayItems(items);
+    }
+}
+
+function displayItems(itemsToDisplay) {
+    const itemList = document.getElementById('itemList');
+    itemList.innerHTML = '';
+    itemsToDisplay.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        
+        const selectTd = document.createElement('td');
+        const selectCheckbox = document.createElement('input');
+        selectCheckbox.type = 'checkbox';
+        selectCheckbox.id='removeCheck';
+        selectCheckbox.onchange = () => toggleSelectRow(tr, index);
+        selectTd.appendChild(selectCheckbox);
+
+        const nameTd = document.createElement('td');
+        nameTd.textContent = item.name;
+        
+        const valueTd = document.createElement('td');
+        const valueInput = document.createElement('input');
+        valueInput.type = 'text';
+        valueInput.value = item.value;
+        valueInput.className = 'value-field';
+        valueInput.onchange = (e) => updateValue(index, e.target.value);
+        valueTd.appendChild(valueInput);
+
+        const unitsTd = document.createElement('td');
+        unitsTd.textContent = item.units;
+
+        const refTd = document.createElement('td');
+        refTd.textContent = item.ref;
+
+        if(item.ref=="HEAD"){
+            nameTd.style.width='100%';
+            nameTd.style.textAlign='center';
+            nameTd.style.fontSize='18px';
+            nameTd.style.fontWeight='bold';
+            nameTd.style.textDecoration='underline';
+            tr.appendChild(selectTd);
+            tr.appendChild(nameTd);
+        }else{
+            tr.appendChild(selectTd);
+            tr.appendChild(nameTd);
+            tr.appendChild(valueTd);
+            tr.appendChild(unitsTd);
+            tr.appendChild(refTd);
+        }
+        itemList.appendChild(tr);
+    });
+}
+
+function toggleSelectRow(row, index) {
+    row.classList.toggle('selected');
+    items[index].selected = !items[index].selected;
+}
+
+function deleteSelectedItems() {
+    items = items.filter(item => !item.selected);
+    displayItems(items);
+}
+
+function updateValue(index, newValue) {
+    items[index].value = newValue;
+}
+
+function searchItems() {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.toLowerCase();
+    const filteredItems = items.filter(item => 
+        item.name.toLowerCase().includes(query) || 
+        item.value.toLowerCase().includes(query) ||
+        item.units.toLowerCase().includes(query) ||
+        item.ref.toLowerCase().includes(query)
+    );
+    displayItems(filteredItems);
+}
+
+// Populate select element with options
+populateSelectElement();
+
+// Initial display of items
+displayItems(items);
+
