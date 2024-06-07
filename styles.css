@@ -1,0 +1,88 @@
+
+h1 {
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.table-container {
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+input.value-field {
+    width: 100% !important;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+tr.selected {
+    background-color: #d1ecf1;
+}
+
+button#deleteButton {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+button#deleteButton:hover {
+    background-color: #c82333;
+}
+
+.nameTd{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
