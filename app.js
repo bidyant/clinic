@@ -7,6 +7,7 @@ slider.addEventListener('input', () => {
 });
 
 document.getElementById('print-button').addEventListener('click', function() {
+    Android.printPage();
     window.print();
 });
 
