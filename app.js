@@ -7,8 +7,13 @@ slider.addEventListener('input', () => {
 });
 
 document.getElementById('print-button').addEventListener('click', function() {
-    Android.printPage();
-    window.print();
+    if (typeof Android !== 'undefined' && Android.printPage) {
+                // Call the Android print function
+                Android.printPage();
+            } else {
+                // Fallback to the browser's print function
+                window.print();
+            }
 });
 
 
