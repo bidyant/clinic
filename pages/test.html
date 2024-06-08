@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/style-separate.css">
+</head>
+<body>
+
+    <!-- Nav section -->
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html">TEST REPORT</a>
+        <a href="./test.html" class="active">test Separate</a>
+        <a href="./liver.html">Liver</a>
+        <a href="./electro.html">Electrolyte</a>
+        <a href="./renal.html">Renal</a>
+        <a href="./urine.html">Urine</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+         <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+         </div>
+        </a>
+    </div>
+    <div class="control">
+        <button id="print-button">Print Report</button>
+        <input type="range" id="slider" min="0" max="120" value="0">
+    </div>
+    <div class="container">
+        <div id="content">
+            <div class="form-container">
+                    <select id="optionSelect"></select>
+                    <button id="add-button" onclick="addItem()">Add</button>
+            </div>
+            <div class="data">
+                <div class="input-text">
+                    <label >Name: </label>
+                    <input type="text"name="name">
+                    <br>
+                </div>
+                <div class="input-text">
+                    <label >Age: </label>
+                    
+                <input id="year" type="text"name="age" value="18  years">
+                </div>
+                <div class="input-text">
+                    <label >Sex: </label>
+                    <input type="text"name="sex">
+                </div>
+                <div class="input-text">
+                    <p id="dateParagraph">Date: </p>
+                </div>
+                <div class="input-text">
+                    <label for="sex">Refer by Dr. </label>
+                    <input type="text">
+                </div>
+                <br>
+            </div>
+            <hr>
+            <div class="table-container">
+                <table>
+                        
+                        <tbody id="itemList"></tbody>
+                </table>
+                    <hr>
+            </div>
+            <button id="deleteButton" onclick="deleteSelectedItems()">Delete Selected</button>
+            <p style="text-align: center; padding-top: 0.5rem;"> ** End Report **</p>
+        </div>
+    </div>
+    <script src="../script/script.js"></script>
+    <script src="../script/app.js"></script>
+</body>
+</html>
