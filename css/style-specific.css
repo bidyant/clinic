@@ -213,8 +213,8 @@ margin: 0.1rem;
   .container {
     visibility: visible;
       background: transparent;
-      width: 794px; /* Width of A4 in pixels */
-      height: 1123px; /* Height of A4 in pixels */
+      width: 20cm; /* Width of A4 in pixels */
+      height: 28.7cm; /* Height of A4 in pixels */
       position: absolute;
       left: 0;
       top: 0;
