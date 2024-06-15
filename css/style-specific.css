@@ -1,0 +1,144 @@
+:root {
+    --light: #f6f6f9;
+    --dark: #333;
+  
+    --primary: #388e3c;
+    --secondary: #d32f2f;
+  
+    /* other stuffs.... */
+    --grey: #eee;
+    --dark-grey: #aaaaaa;
+    --danger: #d32f2f;
+    --light-danger: #fecdd3;
+    --warning: #fbc02d;
+    --light-warning: #ffda23;
+    --success: #388e3c;
+    --light-success: #33ff7b;
+    --info:#0077B5;
+    --info-light:#1877F2;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    background-color: var(--grey);
+  }
+  
+
+  .control{
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #print-button {
+    width: 90%;
+    background-color: var(--success); /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#print-button:hover {
+    background-color: var(--light-success); /* Darker green */
+    color: var(--dark);
+
+}
+
+#slider{
+  width: 80%;
+  margin:0.5rem;
+}
+
+/* content section */
+.container{
+  width: 100%;
+  height: 80%;
+  position: relative;
+  background: url(../files/img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);;
+}
+
+#content{
+  width: 100%;
+  background-color: white;
+  padding: 0.4rem;
+  position: absolute;
+  transition: transform 0.3s ease;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.report{
+  text-align: center;
+}
+.report-table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+  margin-bottom: 0.5rem;
+}
+.report-table thead{
+  border-bottom: 1px solid var(--dark-grey);
+  border-top: 1px solid var(--dark-grey);
+  text-align: start;
+}
+.report-table thead th{
+  text-align: start;
+}
+
+td{
+  padding: 0.1rem;
+}
+/* //print details */
+@media print {
+  .topnav{
+    display: none;
+  }
+  .control{
+    display: none;
+  }
+  input{
+      border: none; 
+      outline: none;
+      border-bottom: none;
+  }
+  .container {
+    visibility: visible;
+      background: transparent;
+      width: 794px; /* Width of A4 in pixels */
+      height: 1123px; /* Height of A4 in pixels */
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0.5rem;
+  }
+  #content{
+      visibility: visible;
+      box-shadow: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container{
+    width: 60%;
+    margin: auto;
+  }
+}
