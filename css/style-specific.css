@@ -194,7 +194,8 @@ margin: 0.1rem;
 /* //print details */
 @media print {
   @page {
-    margin: 0.5cm; /* Default margin */
+    size: A4;
+    margin: 0;
   }
   .topnav{
     display: none;
@@ -210,12 +211,17 @@ margin: 0.1rem;
       background: none;
 
   }
+    body{
+        margin:0;
+        padding:0;
+    }
   .container {
     visibility: visible;
       background: transparent;
       width: 20cm; /* Width of A4 in pixels */
       height: 27.7cm; /* Height of A4 in pixels */
-      position: absolute;
+    page-break-inside: avoid; /* Prevents breaking the div across pages */
+    box-shadow: none;
       left: 0;
       top: 0;
       padding: 0;
