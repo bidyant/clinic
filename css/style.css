@@ -1,0 +1,91 @@
+:root {
+    --light: #f6f6f9;
+    --dark: #333;
+  
+    --primary: #388e3c;
+    --secondary: #d32f2f;
+  
+    /* other stuffs.... */
+    --grey: #eee;
+    --dark-grey: #aaaaaa;
+    --danger: #d32f2f;
+    --light-danger: #fecdd3;
+    --warning: #fbc02d;
+    --light-warning: #ffda23;
+    --success: #388e3c;
+    --light-success: #33ff7b;
+    --info:#0077B5;
+    --info-light:#1877F2;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    background-color: var(--grey);
+  }
+
+  .heading{
+    text-align: center;
+    background-color: var(--info);
+    padding: 0.8rem;
+    color: white;
+  }
+
+  .nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .link{
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--light-warning);
+    border-radius: 0.4rem;
+  }
+
+  .link a{
+    width: 100%;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--dark);
+  }
+
+  .footer{
+    width: 100%;
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    body{
+        background-color: white;
+    }
+
+    .nav{
+        width: 80%;
+        margin: auto;
+        background-color: var(--grey);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .link{
+        width: auto;
+    }
+    }

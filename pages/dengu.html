@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/style-specific.css">
+</head>
+<body>
+
+    <!-- Nav section -->
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html">TEST REPORT</a>
+        <a href="./test.html">Test Separate</a>
+        <a href="./test-heading.html">Heading separate</a>
+        <a href="./liver.html">Liver</a>
+        <a href="./electro.html">Electrolyte</a>
+        <a href="./lipid.html">Lipid</a>
+        <a href="./renal.html">Renal</a>
+        <a href="./urine.html">Urine</a>
+        <a href="./dengu.html" class="active">Degue</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        </a>
+      </div>
+    <div class="control">
+        <button id="print-button">Print Report</button>
+    </div>
+    <div class="container">
+      <div id="content">
+        <div class="main-head">
+            <div class="head-text">
+                <img id="ico" src="../files/ico.png" alt="icon">
+                <div id="text-main">
+                    <h1>PADHI  PATHOLOGY  CLINIC</h1>
+                    <h4>Accurate | Caring | Instant 
+                        &nbsp; &nbsp; &nbsp;
+                        [Regd. No. <b>KAL/30/21</b>]
+                    </h4>
+                    <p style="margin-top: 0.4rem;">
+                        <b>
+                        Panchayat College Road, Dharamgarh, Kalahandi-766015
+                        &nbsp;&nbsp; [Mob. No. 9178313949]
+                    </b>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="contact">
+                <p>Regd. No. <b>KAL/30/21</b></p>
+                <p>Mob. No. 9178313949</p>
+            </div> -->
+        </div>
+        <div class="draw-style">
+            <div id="l1"></div>
+        </div>
+        <div class="data">
+          <div class="input-text">
+              <label for="name">Name: </label>
+              <input type="text"name="name">
+              <br>
+          </div>
+          <div class="input-text">
+              <label for="age">Age: </label>
+              <input id="year" type="text"name="age" value="18 yr">
+          </div>
+          <div class="input-text">
+              <label for="sex">Sex: </label>
+              <input type="text"name="sex">
+          </div>
+          <div class="input-text">
+              <p id="dateParagraph">Date: </p>
+          </div>
+          <div class="input-text">
+            <label for="sex">Refer by Dr. </label>
+            <input type="text">
+        </div>
+          <br>
+        </div>
+          <!-- report start  -->
+          <div class="report">
+            <h3>RENAL FUNCTION TEST REPORT</h3>
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>TEST NAME</th>
+                        <th>RESULT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dengue IgM</td>
+                        <td>
+                            <input type="text"name="value">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dengue IgG</td>
+                        <td>
+                            <input type="text"name="value">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Antigen Ns1</td>
+                        <td>
+                            <input type="text"name="value">
+                        </td>
+                    </tr>  
+                </tbody>
+            </table>
+            <hr>
+        </div>
+        <br>
+        <p style="text-align: center;">** End Report **</p>
+        <!-- report end  -->
+      </div>
+      <div class="footer">
+        <div class="signature">
+            <u><b>signature</b></u>
+        </div>
+        <span id="sp">
+            <img id="delivery" src="../files/delivery.png" alt="DorStep">
+            &nbsp;
+            <h3>Sample Collection</h3>
+        </span>
+        <span id="sp">
+            <img id="wp" src="../files/wp.png" alt="whatsapp">
+            &nbsp;
+            <h3>9178313949</h3>
+        </span>
+    </div>
+    </div>
+    <script src="../script/script.js"></script>
+</body>
+</html>
