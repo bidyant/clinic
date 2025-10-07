@@ -20,6 +20,7 @@ let options = [
     { name: 'A.S.O', units: ' ', ref: ' ' },
     { name: 'R.A (FACTOR)', units: ' ', ref: ' '},
     { name: 'H.I.V', units: ' ', ref: ' ' },
+    { name: 'HBsAg', units: ' ', ref: ' ' },
     { name: 'S BILIRUBIN TOTAL', units: 'mg/dL', ref: '(0.3-1.2)mg/dL' },
     { name: 'S BILIRUBIN DIRECT', units: 'mg/dL', ref: '(0-0.3)mg/dL' },
     { name: 'S BILIRUBIN INDIRECT', units: 'mg/dL', ref: '(0-0.9)mg/dL' },
@@ -165,6 +166,7 @@ populateSelectElement();
 
 // Initial display of items
 displayItems(items);
+
 
 
 
