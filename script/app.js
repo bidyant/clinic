@@ -12,6 +12,7 @@ let options = [
     { name: 'BLOOD INVESTIGATION REPORT', units:' ', ref: 'HEAD'},
     { name: 'URINE TEST', units:' ', ref: 'HEAD'},
     { name: 'E.S.R', units: 'mm/1hr', ref: '(0-20)mm/1hr' },
+    { name: 'CRP(Q)', units: ' ', ref: ' (0-6)mg/dl' },
     { name: 'MALARIA (Ag)', units: ' ', ref: ' ' },
     { name: 'HEMOGLOBIN', units: 'gm%', ref: '(12-16)gm%' },
     { name: 'V.D.R.L', units: ' ', ref: ' ' },
@@ -164,5 +165,6 @@ populateSelectElement();
 
 // Initial display of items
 displayItems(items);
+
 
 
